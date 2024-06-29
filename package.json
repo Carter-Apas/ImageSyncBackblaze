@@ -1,0 +1,19 @@
+{
+  "name": "image-sync-back-blaze",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "scripts": {
+    "gen": "rm -rf ./output && npx tsx ./src/index.ts",
+    "sync": "b2 sync ./<output_folder> b2://<bucket_name> --delete"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4",
+    "tsx": "^4.15.8"
+  }
+}
