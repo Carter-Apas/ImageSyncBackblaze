@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import { getFilesRecursively } from "./models/files";
 
-const inputDirectory = "./input";
-const outputDirectory = "./output";
+const inputDirectory = "./input/original";
+const outputDirectory = "./input/images";
 const sizes = [320, 480, 768, 1024, 1280, 1920, 2048, 3840];
 const quality = 80;
 

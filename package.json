@@ -6,7 +6,7 @@
     "bun-types": "latest"
   },
   "scripts": {
-    "gen": "rm -rf ./output && npx tsx ./src/index.ts",
+    "gen": "rm -rf ./input/images && npx tsx ./src/index.ts",
     "sync": "b2 sync ./<output_folder> b2://<bucket_name> --delete"
   },
   "peerDependencies": {

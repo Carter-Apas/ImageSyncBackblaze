@@ -1,3 +1,5 @@
+Put files into ./input/original
+
 To install dependencies:
 
 ```bash
@@ -14,4 +16,20 @@ or
 npm run gen
 ```
 
-b2 sync ./<output_folder> b2://<bucket_name> --delete
+
+### Authorize
+
+Grab application keyId and KeyValue from backblaze
+
+```bash
+b2 account authorize <keyId> <keyValue>
+```
+
+then:
+
+```bash
+bun run sync
+or
+npm run sync
+```
+
