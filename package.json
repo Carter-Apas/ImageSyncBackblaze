@@ -7,7 +7,7 @@
   },
   "scripts": {
     "gen": "rm -rf ./input/images && npx tsx ./src/index.ts",
-    "sync": "b2 sync ./<output_folder> b2://<bucket_name> --delete"
+    "sync": "b2 sync ./input b2://<bucket_name> --delete"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
