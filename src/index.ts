@@ -15,11 +15,17 @@ const processImages = async () => {
     const relativePath = path.relative(inputDirectory, file);
     const fileNameWithoutExt = path.basename(file, path.extname(file));
     const outputDir = path.join(outputDirectory, path.dirname(relativePath));
-    const maxWidth = (await sharp(file).metadata()).width || 0;
 
     fs.mkdirSync(outputDir, { recursive: true });
 
-    sizes.map(async (width) => {
+    if (path.extname(file) === ".mp4") {
+      fs.copyFileSync(file, path.join(outputDir, path.basename(file)));
+      return;
+    }
+
+    const maxWidth = (await sharp(file).metadata()).width || 0;
+
+    return sizes.map(async (width) => {
       const outputFilePath = path.join(
         outputDir,
         `${fileNameWithoutExt}-${Math.min(width, maxWidth)}.webp`,
